@@ -170,4 +170,49 @@ endsolid star
 - NuGet Package Manager for dependencies
 - Windows operating system
 
-This documentation provides a comprehensive overview of the Star STL Generator application, its features, implementation details, and example parameter combinations for generating different star shapes.
+## Como Enviar o Projeto para o GitHub
+
+1. **Criar uma conta no GitHub** (pule se já tiver uma conta):
+   - Acesse [GitHub.com](https://github.com)
+   - Clique em "Sign up" e siga as instruções
+
+2. **Criar um novo repositório no GitHub**:
+   - Faça login no GitHub
+   - Clique no botão "+" no canto superior direito
+   - Selecione "New repository"
+   - Nome do repositório: `ArquivoSTL` (ou outro nome de sua escolha)
+   - Deixe o repositório público
+   - NÃO inicialize com README
+   - Clique em "Create repository"
+
+3. **Conectar seu repositório local ao GitHub**:
+   - Após criar o repositório, o GitHub mostrará os comandos necessários
+   - Abra o terminal na pasta do projeto (ArquivoSTL)
+   - Execute os seguintes comandos:
+   ```bash
+   git remote add origin https://github.com/SEU_USUARIO/ArquivoSTL.git
+   git branch -M main
+   git push -u origin main
+   ```
+   - Substitua `SEU_USUARIO` pelo seu nome de usuário do GitHub
+
+4. **Autenticação**:
+   - O GitHub pedirá seu usuário e senha
+   - Use seu token de acesso pessoal como senha
+   - Se não tiver um token:
+     1. Vá para Settings > Developer settings > Personal access tokens
+     2. Generate new token
+     3. Dê um nome ao token e selecione o escopo 'repo'
+     4. Copie o token gerado e use-o como senha
+
+5. **Verificar o Upload**:
+   - Acesse seu perfil no GitHub
+   - Você verá o repositório `ArquivoSTL` listado
+   - Todo o código e documentação estarão disponíveis online
+
+6. **Atualizações Futuras**:
+   Para enviar atualizações futuras:
+   ```bash
+   git add .
+   git commit -m "Descrição das alterações"
+   git push
