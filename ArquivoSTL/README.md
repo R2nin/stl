@@ -1,218 +1,172 @@
-# Star STL Generator Documentation
+# Documentação do Star STL Generator
 
-## Project Overview
-The Star STL Generator is a Windows Forms application developed in C# that creates 3D star models and exports them to STL format. This tool allows users to generate parametric star shapes with customizable properties, making it useful for 3D printing and CAD applications.
+## Visão geral do projeto
+O Star STL Generator é um aplicativo do Windows Forms desenvolvido em C# que cria modelos de estrelas 3D e os exporta para o formato STL. Esta ferramenta permite que os usuários gerem formas de estrelas paramétricas com propriedades personalizáveis, tornando-a útil para impressão 3D e aplicativos CAD.
 
-## Technical Details
-- **Platform**: Windows Forms (.NET Framework 4.7.2)
-- **Language**: C#
-- **Main Library**: OpenTK 3.3.3 (OpenGL wrapper for .NET)
-- **Output Format**: STL (Stereolithography) file format
+## Detalhes técnicos
+- **Plataforma**: Windows Forms (.NET Framework 4.7.2)
+- **Idioma**: C#
+- **Biblioteca principal**: OpenTK 3.3.3 (OpenGL wrapper para .NET)
+- **Formato de saída**: formato de arquivo STL (estereolitografia)
 
-## Features and Parameters
-The application provides a user-friendly interface with the following customizable parameters:
+## Recursos e parâmetros
+O aplicativo fornece uma interface amigável com os seguintes parâmetros personalizáveis:
 
-1. **Number of Points**
-   - Range: 3-20 points
-   - Default: 5 points
-   - Controls the number of star points
+1. **Número de pontos**
+- Intervalo: 3-20 pontos
+- Padrão: 5 pontos
+- Controla o número de pontos da estrela
 
-2. **External Radius**
-   - Range: 1-100 units
-   - Default: 20 units
-   - Defines the outer radius of the star
+2. **Raio externo**
+- Intervalo: 1-100 unidades
+- Padrão: 20 unidades
+- Define o raio externo da estrela
 
-3. **Internal Radius**
-   - Range: 1-100 units
-   - Default: 10 units
-   - Defines the inner radius of the star
-   - Must be smaller than the external radius
+3. **Raio interno**
+- Intervalo: 1-100 unidades
+- Padrão: 10 unidades
+- Define o raio interno da estrela
+- Deve ser menor que o raio externo
 
-4. **Star Height**
-   - Range: 1-100 units
-   - Default: 10 units
-   - Defines the vertical height of the 3D star
+4. **Altura da estrela**
+- Intervalo: 1-100 unidades
+- Padrão: 10 unidades
+- Define a altura vertical da estrela 3D
 
-## Example Parameter Combinations
-Based on the included report, here are some tested parameter combinations that produce good results:
+## Combinações de parâmetros de exemplo
+Com base no relatório incluído, aqui estão algumas combinações de parâmetros testadas que produzem bons resultados:
 
-1. Basic Triangle Star:
-   - Points: 3
-   - External Radius: 20
-   - Internal Radius: 10
-   - Height: 10
+1. Estrela triangular básica:
+- Pontos: 3
+- Raio externo: 20
+- Raio interno: 10
+- Altura: 10
 
-2. Enhanced Triangle Star:
-   - Points: 3
-   - External Radius: 20
-   - Internal Radius: 15
-   - Height: 10
+2. Estrela triangular aprimorada:
+- Pontos: 3
+- Raio externo: 20
+- Raio interno: 15
+- Altura: 10
 
-3. Square Star:
-   - Points: 4
-   - External Radius: 30
-   - Internal Radius: 15
-   - Height: 40
+3. Estrela quadrada:
+- Pontos: 4
+- Raio externo: 30
+- Raio interno: 15
+- Altura: 40
 
-4. Classic Pentagon Star:
-   - Points: 5
-   - External Radius: 30
-   - Internal Radius: 15
-   - Height: 20
+4. Estrela pentágono clássica:
+- Pontos: 5
+- Raio externo: 30
+- Raio interno: 15
+- Altura: 20
 
-5. Complex Stars:
-   - Points: 6-12
-   - External Radius: 30
-   - Internal Radius: 15
-   - Height: 40
+5. Estrelas complexas:
+- Pontos: 6-12
+- Raio externo: 30
+- Raio interno: 15
+- Altura: 40
 
-## Implementation Details
+## Detalhes da implementação
 
-### Core Components
+### Componentes principais
 
-1. **Triangle Structure**
+1. **Estrutura do triângulo**
 ```csharp
 struct Triangulo
 {
-    public Vector3d A, B, C;  // Vertices
-    public Vector3d N;        // Normal vector
+public Vector3d A, B, C; // Vértices
+public Vector3d N; // Vetor normal
 }
 ```
 
-### Key Features
+### Principais recursos
 
-1. **Mesh Generation**
-   - Creates base and top faces
-   - Generates side faces connecting base to top
-   - Automatically calculates normal vectors
-   - Ensures proper triangulation for 3D printing
+1. **Geração de malha**
+- Cria faces base e superior
+- Gera faces laterais conectando a base ao topo
+- Calcula automaticamente vetores normais
+- Garante triangulação adequada para impressão 3D
 
-2. **STL File Generation**
-   - Generates ASCII STL format
-   - Includes normal vectors for each face
-   - Uses invariant culture for numeric values
-   - Creates properly structured STL file
+2. **Geração de arquivo STL**
+- Gera formato ASCII STL
+- Inclui vetores normais para cada face
+- Usa cultura invariante para valores numéricos
+- Cria arquivo STL estruturado adequadamente
 
-### Algorithm Overview
+### Visão geral do algoritmo
 
-1. **Vertex Generation**
-   - Calculates vertices using parametric equations
-   - Alternates between external and internal radius
-   - Creates both base and top vertices
+1. **Geração de vértices**
+- Calcula vértices usando equações paramétricas
+- Alterna entre raio externo e interno
+- Cria vértices base e superior
 
-2. **Face Generation**
-   - Creates triangular faces for base
-   - Creates triangular faces for top
-   - Generates side faces connecting base to top
-   - Calculates normal vectors for each face
+2. **Geração de faces**
+- Cria faces triangulares para a base
+- Cria faces triangulares para o topo
+- Gera faces laterais conectando a base ao topo
+- Calcula vetores normais para cada face
 
-## How to Use
+## Como usar
 
-1. Launch the application
-2. Set desired parameters:
-   - Adjust number of star points
-   - Set external radius (outer points)
-   - Set internal radius (inner points)
-   - Set the height of the star
-3. Click "Generate Star STL" button
-4. The STL file will be saved in the application's directory
+1. Inicie o aplicativo
+2. Defina os parâmetros desejados:
+- Ajuste o número de pontos de estrela
+- Definir raio externo (pontos externos)
+- Definir raio interno (pontos internos)
+- Definir a altura da estrela
+3. Clique no botão "Gerar STL de estrela"
+4. O arquivo STL será salvo no diretório do aplicativo
 
-## Sample Files
-The project includes two example STL files:
-- `star.stl`: Generated star model example
-- `piramide.stl`: Example of a pyramid shape for reference
+## Arquivos de amostra
+O projeto inclui dois arquivos STL de exemplo:
+- `star.stl`: Exemplo de modelo de estrela gerado
+- `piramide.stl`: Exemplo de uma forma de pirâmide para referência
 
-## Dependencies
+## Dependências
 - .NET Framework 4.7.2
-- OpenTK 3.3.3 (included in packages)
+- OpenTK 3.3.3 (incluído nos pacotes)
 
-## File Structure
+## Estrutura do arquivo
 ```
 ArquivoSTL/
-├── Form1.cs                 # Main application logic
-├── Form1.Designer.cs        # UI design code
-├── Form1.resx              # Windows Forms resource file
-├── Program.cs              # Application entry point
-├── packages.config         # NuGet package configuration
-└── bin/Debug/              # Compiled application and output files
-    ├── star.stl           # Generated STL file
-    └── piramide.stl       # Example STL file
+├── Form1.cs # Lógica principal do aplicativo
+├── Form1.Designer.cs # Código de design da IU
+├── Form1.resx # Arquivo de recursos do Windows Forms
+├── Program.cs # Ponto de entrada do aplicativo
+├── packages.config # Configuração do pacote NuGet
+└── bin/Debug/ # Aplicativo compilado e arquivos de saída
+├── star.stl # Arquivo STL gerado
+└── piramide.stl # Arquivo STL de exemplo
 ```
 
-## Error Handling
-The application includes robust error handling:
-- Validates that internal radius is smaller than external radius
-- Uses try-catch blocks for file operations
-- Provides user feedback through message boxes
+## Tratamento de erros
+O aplicativo inclui tratamento de erros robusto:
+- Valida se o raio interno é menor que o raio externo
+- Usa blocos try-catch para operações de arquivo
+- Fornece feedback do usuário por meio de caixas de mensagem
 
-## Technical Notes
-- Uses double precision for calculations (Vector3d)
-- Implements proper cleanup of resources
-- Follows Windows Forms best practices
-- Generates manifold geometry suitable for 3D printing
+## Notas técnicas
+- Usa precisão dupla para cálculos (Vector3d)
+- Implementa limpeza adequada de recursos
+- Segue as práticas recomendadas do Windows Forms
+- Gera geometria de coletor adequada para impressão 3D
 
-## Output Format
-The generated STL file follows the standard ASCII STL format:
+## Formato de saída
+O arquivo STL gerado segue o formato STL ASCII padrão:
 ```
-solid star
-  facet normal nx ny nz
-    outer loop
-      vertex x1 y1 z1
-      vertex x2 y2 z2
-      vertex x3 y3 z3
-    endloop
-  endfacet
+estrela sólida
+faceta normal nx ny nz
+loop externo
+vértice x1 y1 z1
+vértice x2 y2 z2
+vértice x3 y3 z3
+endloop
+endfacet
 endsolid star
 ```
 
-## Development Environment
-- Visual Studio (recommended for development)
-- NuGet Package Manager for dependencies
-- Windows operating system
+## Ambiente de desenvolvimento
+- Visual Studio (recomendado para desenvolvimento)
+- Gerenciador de pacotes NuGet para dependências
+- Sistema operacional Windows
 
-## Como Enviar o Projeto para o GitHub
-
-1. **Criar uma conta no GitHub** (pule se já tiver uma conta):
-   - Acesse [GitHub.com](https://github.com)
-   - Clique em "Sign up" e siga as instruções
-
-2. **Criar um novo repositório no GitHub**:
-   - Faça login no GitHub
-   - Clique no botão "+" no canto superior direito
-   - Selecione "New repository"
-   - Nome do repositório: `ArquivoSTL` (ou outro nome de sua escolha)
-   - Deixe o repositório público
-   - NÃO inicialize com README
-   - Clique em "Create repository"
-
-3. **Conectar seu repositório local ao GitHub**:
-   - Após criar o repositório, o GitHub mostrará os comandos necessários
-   - Abra o terminal na pasta do projeto (ArquivoSTL)
-   - Execute os seguintes comandos:
-   ```bash
-   git remote add origin https://github.com/SEU_USUARIO/ArquivoSTL.git
-   git branch -M main
-   git push -u origin main
-   ```
-   - Substitua `SEU_USUARIO` pelo seu nome de usuário do GitHub
-
-4. **Autenticação**:
-   - O GitHub pedirá seu usuário e senha
-   - Use seu token de acesso pessoal como senha
-   - Se não tiver um token:
-     1. Vá para Settings > Developer settings > Personal access tokens
-     2. Generate new token
-     3. Dê um nome ao token e selecione o escopo 'repo'
-     4. Copie o token gerado e use-o como senha
-
-5. **Verificar o Upload**:
-   - Acesse seu perfil no GitHub
-   - Você verá o repositório `ArquivoSTL` listado
-   - Todo o código e documentação estarão disponíveis online
-
-6. **Atualizações Futuras**:
-   Para enviar atualizações futuras:
-   ```bash
-   git add .
-   git commit -m "Descrição das alterações"
-   git push
