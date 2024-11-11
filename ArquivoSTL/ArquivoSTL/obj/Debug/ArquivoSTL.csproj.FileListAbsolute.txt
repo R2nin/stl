@@ -1,0 +1,14 @@
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\bin\Debug\ArquivoSTL.exe.config
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\bin\Debug\ArquivoSTL.exe
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\bin\Debug\ArquivoSTL.pdb
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\bin\Debug\OpenTK.dll
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\bin\Debug\OpenTK.pdb
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\bin\Debug\OpenTK.xml
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\obj\Debug\ArquivoSTL.csproj.AssemblyReference.cache
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\obj\Debug\ArquivoSTL.Form1.resources
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\obj\Debug\ArquivoSTL.Properties.Resources.resources
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\obj\Debug\ArquivoSTL.csproj.GenerateResource.cache
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\obj\Debug\ArquivoSTL.csproj.CoreCompileInputs.cache
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\obj\Debug\ArquivoSTL.csproj.Up2Date
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\obj\Debug\ArquivoSTL.exe
+C:\Users\user2\Downloads\ArquivoSTL\ArquivoSTL\ArquivoSTL\obj\Debug\ArquivoSTL.pdb

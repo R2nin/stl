@@ -1,0 +1,30 @@
+solid piramide
+facet normal 0 0 -1
+   outer loop
+     vertex 0 0 0
+     vertex 5 10 0
+     vertex 10 0 0
+   endloop
+endfacet
+facet normal 0 -0,707106781186548 0,707106781186548
+    outer loop
+        vertex 0 0 0
+        vertex 10 0 0
+        vertex 5 5 5
+    endloop
+endfacet
+facet normal 0,816496580927726 0,408248290463863 0,408248290463863
+    outer loop
+        vertex 10 0 0
+        vertex 5 10 0
+        vertex 5 5 5
+    endloop
+endfacet
+facet normal -0,816496580927726 0,408248290463863 0,408248290463863
+    outer loop
+        vertex 5 10 0
+        vertex 0 0 0
+        vertex 5 5 5
+    endloop
+endfacet
+endsolid piramide
